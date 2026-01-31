@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "turbo run build",
-    "build:admin": "turbo run build --filter=admin-portal",
+    "build:admin": "turbo run build --filter=admin",
     "build:teacher": "turbo run build --filter=teacher-portal",
     "build:student": "turbo run build --filter=student-portal",
     "dev": "turbo run dev",
