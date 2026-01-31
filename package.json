@@ -4,8 +4,8 @@
   "private": true,
   "packageManager": "pnpm@9.12.3",
   "engines": {
-    "node": "24.x",
-    "pnpm": ">=9.12.3"
+    "pnpm": ">=6.35.1",
+    "node": ">=18"
   },
   "scripts": {
     "build": "turbo run build",
