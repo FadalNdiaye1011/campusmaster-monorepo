@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+    reactStrictMode: true,
+    transpilePackages: ['@repo/api', '@repo/auth'],
+    output: 'standalone',
+    experimental: {
+        outputFileTracingRoot: require('path').join(__dirname, '../../'),
+    },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
