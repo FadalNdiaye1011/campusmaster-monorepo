@@ -1,0 +1,26 @@
+[build]
+base = "../.."
+publish = "apps/admin/.next"
+command = "pnpm install && pnpm turbo run build --filter=admin"
+
+[build.environment]
+NODE_VERSION = "20"
+PNPM_VERSION = "9.12.3"
+NPM_FLAGS = "--version"
+
+[functions]
+directory = "apps/admin/.netlify/functions"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+[context.production]
+command = "pnpm install && pnpm turbo run build --filter=admin"
+
+[context.production.environment]
+NEXT_PUBLIC_API_URL = "https://campusmaster-campusmaster-v1.onrender.com"

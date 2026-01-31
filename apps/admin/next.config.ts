@@ -1,11 +1,17 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const path = require('path');
 
 const nextConfig = {
     reactStrictMode: true,
     transpilePackages: ['@repo/api', '@repo/auth'],
+
+    // ✅ CORRECTION : outputFileTracingRoot sorti de experimental
+    outputFileTracingRoot: path.join(__dirname, '../../'),
+
     output: 'standalone',
-    experimental: {
-        outputFileTracingRoot: require('path').join(__dirname, '../../'),
+
+    images: {
+        unoptimized: true,
     },
 };
 
